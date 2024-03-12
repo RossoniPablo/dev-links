@@ -81,11 +81,17 @@ body * {
     transform: translateY(-50%);
     left: 0;
     z-index: 1;
+
+    animation: slide-returning .4s;
 }
 
+.switch button:hover {
+    outline: 8px solid var(--highLight-color);
+}
+
+
 .light .switch button {
-    right: 0;
-    left: initial;
+    animation: slide-going .4s forwards;
 }
 
 .switch span {
@@ -162,5 +168,26 @@ ul li a:hover {
 
     .light {
         --bg-url: url(./assets/img/bg-desktop-light.jpg);
+    }
+}
+
+/*Animação*/
+@keyframes slide-going {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-returning {
+    from {
+        left: 50%;
+    }
+
+    to {
+        left: 0;
     }
 }
